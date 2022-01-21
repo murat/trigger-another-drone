@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: trigger
+
+steps:
+  - name: trigger-gomstore-tests
+    image: plugins/downstream
+    settings:
+      server: https://cloud.drone.io
+      token:
+        from_secret: DRONE_TOKEN
+      fork: true
+      repositories:
+        - murat/gomstore
