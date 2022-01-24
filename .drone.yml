@@ -7,7 +7,6 @@ steps:
     image: plugins/webhook
     settings:
       urls: https://cloud.drone.io/api/repos/murat/gomstore/builds?branch=drone
-      method: post
       token_type: Bearer
       token_value:
         from_secret: DRONE_TOKEN
