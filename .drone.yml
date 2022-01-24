@@ -4,11 +4,10 @@ name: trigger
 
 steps:
   - name: trigger-gomstore-tests
-    image: plugins/downstream
+    image: plugins/webhook
     settings:
-      server: https://cloud.drone.io
-      token:
+      urls: https://cloud.drone.io/api/repos/murat/gomstore/builds?branch=drone
+      method: post
+      token_type: Bearer
+      token_value:
         from_secret: DRONE_TOKEN
-      fork: true
-      repositories:
-        - murat/gomstore
